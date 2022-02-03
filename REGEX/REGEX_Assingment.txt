@@ -1,0 +1,340 @@
+D:\REGEX\main.py
+
+     #Task 1
+
+     # registration/referal_ID  =   DIRSS3130
+
+     # NAME  :   GOPALAKANNAN
+
+     # collage = "PAAVAI ENGINEERING COLLAGE"
+
+ @ Linkedin ===>> https://www.linkedin.com/in/gopalakannan-p-571b21198/  
+
+ @ github   ===>> https://github.com/gopal1860
+
+
+
+Q1: Inverted Pyramid pattern with the same digit
+output:
+
+55555
+5555
+555
+55
+5 
+
+input: 5
+
+solution:
+n = int(input())
+for i in range(n):
+    for j in range(n-i):
+        print("5",end="")
+    print()
+
+Q2: inverted half pyramid pattern with number
+output:
+
+012345
+01234
+0123
+012
+01
+0
+
+input: 5
+
+solution:
+n = int(input())
+for i in range(n+1):
+    for j in range(n+1-i):
+        v= j
+        print(v,end="")
+    print()
+
+Q3: Alternate numbers pattern using while loop
+output:
+
+1
+33
+555
+7777
+99999
+
+input: 5
+
+solution:
+
+n = int(input())
+v = 1
+for i in range(n):
+    for j in range(i+1):
+        print(v,end="")
+    print()
+    v +=2
+
+Q4: Reverse Pyramid of Numbers
+output:
+1 
+2 1 
+3 2 1 
+4 3 2 1 
+5 4 3 2 1 
+
+input: 5
+solution:
+
+n=int(input())
+
+for i in range(n+1):
+    for j in range(i, 0, -1):
+        print(j, end=’ ‘)
+    print(“”)
+
+Q5: Print reverse number from 10 to 1
+output:
+1 
+3 2 
+6 5 4 
+10 9 8 7 
+
+solution:
+
+start = 1
+stop = 2
+currentNumber = stop
+for row in range(2, 6):
+    for col in range(start, stop):
+        currentNumber -= 1
+        print(currentNumber, end=’ ‘)
+    print(“”)
+    start = stop
+    stop += row
+    currentNumber = stop
+
+Q6: Pascal’s triangle pattern using numbers
+output:
+1 
+1 1 
+1 2 1 
+1 3 3 1 
+1 4 6 4 1 
+1 5 10 10 5 1 
+1 6 15 20 15 6 1
+
+solution:
+#_pascal_
+
+def triangle(size):
+    for i in range(0, size):
+        for j in range(0, i + 1):
+            print(decide_number(i, j), end=" ")
+        print()
+
+
+def decide_number(n, k):
+    num = 1
+    if k > n - k:
+        k = n - k
+    for i in range(0, k):
+        num = num * (n - i)
+        num = num // (i + 1)
+    return num
+
+# set rows
+rows = 7
+triangle(rows)
+
+Q7: Square pattern with numbers
+output:
+1 2 3 4 5 
+2 2 3 4 5 
+3 3 3 4 5 
+4 4 4 4 5 
+5 5 5 5 5
+
+solution:
+
+rows = 5
+for i in range(1, rows + 1):
+    for j in range(1, rows + 1):
+        if j <= i:
+            print(i, end=' ')
+        else:
+            print(j, end=' ')
+    print()
+
+Q8: Multiplication table pattern
+
+output:
+1  
+2  4  
+3  6  9  
+4  8  12  16  
+5  10  15  20  25  
+6  12  18  24  30  36  
+7  14  21  28  35  42  49  
+8  16  24  32  40  48  56  64 
+
+solution:
+
+rows = 8
+# rows = int(input("Enter the number of rows "))
+for i in range(1, rows + 1): #row start 1
+    for j in range(1, i + 1): #col start 1
+        # multiplication current column and row
+        square = i * j
+        print(i * j, end='  ')
+    print()
+
+Q9: Downward full Pyramid Pattern of star
+output:
+
+ * * * * * * *
+  * * * * * *
+   * * * * *
+    * * * *
+     * * *
+      * *
+       *
+
+solution:
+
+n=7
+for i in range(n):
+    print(" " * i + " *" * (n-i))
+
+Q10: full Pyramid Pattern of star
+output:
+
+       *
+      * *
+     * * *
+    * * * *
+   * * * * *
+  * * * * * *
+solution:
+
+n=7
+for i in range(n):
+        print(" " * (n-i) + " *" * i)
+
+Q11: two pyramids of stars
+output:
+
+*
+**
+***
+****
+*****
+
+*****
+****
+***
+**
+*
+
+solution:
+
+n=5
+for i in range(n):
+    for j in range(i+1):
+        print("*",end="")
+    print()
+print("")
+for i in range(n):
+    for j in range(n-i):
+        print("*",end="")
+    print()
+
+Q12: Right start pattern of star
+output:
+
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+
+solution:
+
+n=5
+for i in range(n):
+    for j in range(i):
+        print("*",end="")
+    print()
+for i in range(n):
+    for j in range(n-i):
+        print("*",end="")
+    print()
+
+Q13: Left triangle pascal’s pattern
+output:
+        * 
+      * * 
+    * * * 
+  * * * * 
+* * * * * 
+  * * * * 
+    * * * 
+      * * 
+        * 
+
+solution:
+
+rows = 5
+i = 1
+while i <= rows:
+    j = i
+    while j < rows:
+        # display space
+        print(' ', end=' ')
+        j += 1
+    k = 1
+    while k <= i:
+        print('*', end=' ')
+        k += 1
+    print()
+    i += 1
+
+i = rows
+while i >= 1:
+    j = i
+    while j <= rows:
+        print(' ', end=' ')
+        j += 1
+    k = 1
+    while k < i:
+        print('*', end=' ')
+        k += 1
+    print('')
+    i -= 1
+
+Q14:  Pant style pattern of stars
+output:
+
+**************
+******__******
+*****____*****
+****______****
+***________***
+**__________**
+*____________*
+
+solution:
+
+rows = 14
+print("*" * rows, end="\n")
+i = (rows // 2) - 1
+j = 2
+while i != 0:
+    while j <= (rows - 2):
+        print("*" * i, end="")
+        print("_" * j, end="")
+        print("*" * i, end="\n")
+        i = i - 1
+        j = j + 2
